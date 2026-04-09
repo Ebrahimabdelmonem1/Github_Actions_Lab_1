@@ -12,3 +12,5 @@ jobs:
     steps:
       - name: print a welcome message
         run:  echo "welcome to our first Github Actions workflow"
+      - name: print the date
+        run: date
