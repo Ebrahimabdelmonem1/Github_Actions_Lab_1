@@ -14,3 +14,7 @@ jobs:
         run:  echo "welcome to our first Github Actions workflow"
       - name: print the date
         run: date
+      - name: checkout repository
+        uses: actions/checkout@v6.0.2
+      - name: list repository files
+        run: ls -la
