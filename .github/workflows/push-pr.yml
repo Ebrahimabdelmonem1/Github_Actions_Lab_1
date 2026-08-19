@@ -1,34 +1,20 @@
-on:
-  push:
-    branches:
-      - main
-      - "relearse/**"
-    paths:
-      - "src/**"
-  pull_request:
-    branches:
-      - main
-      - "release/**"
-
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4.2.2
-
-      - name: List files
-        run: |
-          pwd
-          ls -la
-          git status
-          git ls-files
-
-      - name: Check package.json
-        run: |
-          ls -l package.json
-          cat package.json
-
-      - name: Run tests
-        run: npm test
+on: 
+    push:
+        branches:
+            - main
+            - "relearse/**"
+        paths: 
+            - "src/**"
+    pull_request: 
+        branches:
+            - main
+            - "release/**"
+jobs:                
+    test: 
+        runs-on: ubuntu-latest
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v4.2.2
+        
+        - name: run tests
+          run: npm test   
