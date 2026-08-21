@@ -13,10 +13,7 @@ jobs:
         uses: docker://alpine:3.14
         with:
           entrypoint: /bin/sh
-          args:
-            - -c
-            - |
-              echo "this runs inside docker container"
+          args: -c "echo 'this runs inside docker container'"
 
       - name: run a command in ubuntu VM
         run: echo "this runs on ubuntu VM"
