@@ -1,23 +1,22 @@
 on:
-   workflow_dispatch:
-
+  workflow_dispatch:
 
 jobs:
-    hyprid_job:
-      runs-on: ubuntu-latest
-      steps:
-         - name: run a command in ubuntu VM
-           run: echo "this runs on ubuntu VM "
+  hyprid_job:
+    runs-on: ubuntu-latest
 
-         - name: run in alpine container   
-          uses: docker://alpine:3.14
-          with:  
-            entrypoint: /bin/bash
-            args:
-              - -c
-              - |
-                echo "this runs inside docker container"
-         - name: run a command in ubuntu VM
-           run: echo "this runs on ubuntu VM "
+    steps:
+      - name: run a command in ubuntu VM
+        run: echo "this runs on ubuntu VM"
 
-                
+      - name: run in alpine container
+        uses: docker://alpine:3.14
+        with:
+          entrypoint: /bin/sh
+          args:
+            - -c
+            - |
+              echo "this runs inside docker container"
+
+      - name: run a command in ubuntu VM
+        run: echo "this runs on ubuntu VM"
