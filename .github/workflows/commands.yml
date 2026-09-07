@@ -8,8 +8,8 @@ jobs:
       run: echo "API_KEY=123" >> $GITHUB_ENV
     - name: use API Key
       run: |
-        echo"::add-mask::$API_KEY"
-        echo"using API_Key = $API_KEY"
+        echo "::add-mask::$API_KEY"
+        echo "using API_Key = $API_KEY"
     
     
     
