@@ -4,8 +4,13 @@ jobs:
   example:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          deprecated=true  # this acts as variable with name deprecated
-          if [[ deprecated ]]; then
-            echo "::warning::deprecated function found"
-          fi  
+    - name: set API key
+      run: echo "API_KEY=123" >> $GITHUB_ENV
+    - name: use API Key
+      run: echo "API Key = $API_KEY" 
+      
+      # - run: |
+      #     deprecated=true  # this acts as variable with name deprecated
+      #     if [[ deprecated ]]; then
+      #       echo "::warning::deprecated function found"
+      #     fi  
